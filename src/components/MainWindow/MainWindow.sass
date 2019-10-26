@@ -1,22 +1,33 @@
 .main-window
     padding: 2% 25%
-    &__title
+    .title
+        margin: 20px 0 5px
+        font-size: 18px
+        font-weight: bold
+        &.int
+            color: blue
+        &.agi
+            color: green
+        &.str
+            color: red
+
     &__search-field
         width: 100%
         display: flex
         justify-content: center
         input
             box-sizing: border-box
-            height: 20px
             border: 1px solid gray
             border-right: none
             border-radius: 5px
             border-top-right-radius: 0
             border-bottom-right-radius: 0
+            color: black
+            padding: 5px
             
         button
             box-sizing: border-box
-            height: 20px
+            height: auto
             border: 1px solid gray
             border-left: none
             background: white
@@ -26,23 +37,26 @@
             border-bottom-left-radius: 0
             
     &__hero-container
-        margin-bottom: 1%
         display: flex
+        flex-wrap: wrap
         
         .hero-block
-            width: 7%
-            margin: 0 5px 5px 0
+            width: 9%
             position: relative
+            
+            height: 2.5vw
+            margin: 3px
             img
                 width: 100%
                 border: 1px white solid
-            img:hover
+                height: auto
+                filter: grayscale(100%)
+            // img:hover
                
-                transition: 1s
-                margin-left: -25%
-                margin-top: -25%
-                position: absolute
-                width: 150%
-                z-index: 100
+            //     transition: 0.4s
+            //     transform: scale(1.7)
+            //     position: absolute
+            //     z-index: 1
+            //     filter: grayscale(0%)
                 
             

@@ -1,99 +1,43 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from 'axios';
 import './MainWindow.css';
-import hero_icon from "../Media/temp/am.jpg";
+import HeroContainer from "../HeroContainer/HeroContainer"
 
-
-class MainWindow extends React.Component {
-    constructor() {
-        super();
-        this.state = { 
-            data: {},
-            str:{},
-            agi:{},
-            int:{}
+function MainWindow() {
+    const[currentHero, setCurrentHero] = useState(228);
+    const [data, setData] = useState({});
+    
+    useEffect(() => {
+        const fetchData = async () => {
+            const result = await axios(
+                'https://api.opendota.com/api/heroStats',
+            );
+            setData(result.data);
         };
-      }
-      async componentDidMount() {
-        const response = await fetch(`https://api.opendota.com/api/heroStats`);
-        const json = await response.json();
-        this.setState({ data: json });
-        for (var key in this.state.data){
-            if(this.state.data[key].primary_attr==="str")
-            console.log(this.state.data[key].name);
+        fetchData();
+    }, []);
+    return (
+        
+        <section className="main-window">
+            <p>current hero id:{currentHero}</p>
             
-        }
-      }
-      
-    render(){
-  return (
-    <section className="main-window">
-        <div className="main-window__search-field">
-            <input type="text"/>
-            <button>Search</button>
-        </div>
-        <p className="main-window__title">STRENGTH</p>
-        <div className="main-window__hero-container str">
             
-            <div className="hero-block">
-                <img src={hero_icon} alt=""/>
+            <div className="main-window__search-field">
+                <input type="text" placeholder="Find your hero!"/>
+                <button>Search</button>
             </div>
-            <div className="hero-block">
-                <img src={hero_icon} alt=""/>
-            </div>
-            <div className="hero-block">
-                <img src={hero_icon} alt=""/>
-            </div>
-            <div className="hero-block">
-                <img src={hero_icon} alt=""/>
-            </div>
-            <div className="hero-block">
-                <img src={hero_icon} alt=""/>
-            </div>
-        </div>
-
-    </section>
-  );
-    }
+            <p className="title str">STRENGTH</p>
+            <HeroContainer attr="str" data={data} currentHero={currentHero} setCurrentHero={setCurrentHero}/>
+            <p className="title agi">AGILITY</p>
+            <HeroContainer attr="agi" data={data} currentHero={currentHero} setCurrentHero={setCurrentHero}/>
+            <p className="title int">INTELLIGENCE</p>
+            <HeroContainer attr="int" data={data} currentHero={currentHero} setCurrentHero={setCurrentHero}/>
+            
+        </section>
+       
+    );
 }
 
 export default MainWindow;
 
 
-
-
-// {DreamData.map((dreamDetail, index) => {
-//     return (
-//         <div
-//             className="dream"
-//             onClick={() => {
-//                 props.setCurrentDreamIndex(index);
-                
-//             }}
-//         >
-//             <div className="img-small">
-//                 <img
-//                     src={require(`../../../Media/image/DreamTrader/${dreamDetail.img}`)}
-//                     alt="dream-img"
-//                 />
-//             </div>
-//             <div className="all-block">
-//                 <div className="title">{dreamDetail.title}</div>
-//                 <div className="img-block">
-//                     <img
-//                         src={require(`../../../Media/image/DreamTrader/${dreamDetail.img}`)}
-//                         alt="dream-img"
-//                     />
-//                 </div>
-//                 <button className="button">VIEW DETAILS</button>
-//                 <p className="price">
-//                     Real price ${dreamDetail.realPrice}
-//                 </p>
-//                 <p className="description">
-//                 {dreamDetail.description}
-//                 </p>
-//                 <button className="delete-current-dream"></button>
-//             </div>
-//         </div>
-        
-//     );
-// })}

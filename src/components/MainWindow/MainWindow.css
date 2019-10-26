@@ -1,5 +1,15 @@
 .main-window {
   padding: 2% 25%; }
+  .main-window .title {
+    margin: 20px 0 5px;
+    font-size: 18px;
+    font-weight: bold; }
+    .main-window .title.int {
+      color: blue; }
+    .main-window .title.agi {
+      color: green; }
+    .main-window .title.str {
+      color: red; }
   .main-window__search-field {
     width: 100%;
     display: -webkit-box;
@@ -11,16 +21,17 @@
     .main-window__search-field input {
       -webkit-box-sizing: border-box;
               box-sizing: border-box;
-      height: 20px;
       border: 1px solid gray;
       border-right: none;
       border-radius: 5px;
       border-top-right-radius: 0;
-      border-bottom-right-radius: 0; }
+      border-bottom-right-radius: 0;
+      color: black;
+      padding: 5px; }
     .main-window__search-field button {
       -webkit-box-sizing: border-box;
               box-sizing: border-box;
-      height: 20px;
+      height: auto;
       border: 1px solid gray;
       border-left: none;
       background: white;
@@ -29,24 +40,21 @@
       border-top-left-radius: 0;
       border-bottom-left-radius: 0; }
   .main-window__hero-container {
-    margin-bottom: 1%;
     display: -webkit-box;
     display: -ms-flexbox;
-    display: flex; }
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; }
     .main-window__hero-container .hero-block {
-      width: 7%;
-      margin: 0 5px 5px 0;
-      position: relative; }
+      width: 9%;
+      position: relative;
+      height: 2.5vw;
+      margin: 3px; }
       .main-window__hero-container .hero-block img {
         width: 100%;
-        border: 1px white solid; }
-      .main-window__hero-container .hero-block img:hover {
-        -webkit-transition: 1s;
-        transition: 1s;
-        margin-left: -25%;
-        margin-top: -25%;
-        position: absolute;
-        width: 150%;
-        z-index: 100; }
+        border: 1px white solid;
+        height: auto;
+        -webkit-filter: grayscale(100%);
+                filter: grayscale(100%); }
 
 /*# sourceMappingURL=MainWindow.css.map */
