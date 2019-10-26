@@ -1,3 +1,11 @@
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+
 .main-window {
   padding: 2% 25%; }
   .main-window .title {
@@ -53,8 +61,15 @@
       .main-window__hero-container .hero-block img {
         width: 100%;
         border: 1px white solid;
-        height: auto;
-        -webkit-filter: grayscale(100%);
-                filter: grayscale(100%); }
+        height: auto; }
+      .main-window__hero-container .hero-block img:hover {
+        -webkit-transition: 0.4s;
+        transition: 0.4s;
+        -webkit-transform: scale(1.7);
+                transform: scale(1.7);
+        position: absolute;
+        z-index: 1;
+        -webkit-filter: grayscale(0%);
+                filter: grayscale(0%); }
 
 /*# sourceMappingURL=MainWindow.css.map */

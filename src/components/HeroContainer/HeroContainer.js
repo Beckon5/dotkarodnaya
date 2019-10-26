@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 function HeroContainer(props) {
 
+    const[currentHero, setCurrentHero] = [props.currentHero, props.setCurrentHero]
     return (
         <div className="main-window__hero-container">
             {
@@ -14,7 +15,7 @@ function HeroContainer(props) {
                     if (props.data[item].primary_attr === props.attr)
 
                         return (
-                            <div className="hero-block" onMouseOver={(e) => props.setCurrentHero(props.data[item].id)}>
+                            <div className="hero-block" onClick={(e) => setCurrentHero(props.data[item].id)}>
                                 <Link to="/hero-stats" >
                                     <img src={"http://cdn.dota2.com" + props.data[item].img} alt={props.data[item].id} />
                                 </Link>

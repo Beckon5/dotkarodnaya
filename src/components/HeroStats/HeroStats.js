@@ -1,54 +1,90 @@
 import React from 'react';
-
+import {
+    BrowserRouter as Link, Router
+  } from "react-router-dom";
 import './HeroStats.css';
-function HeroStats() {
 
+function HeroStats(props) {
+    const data = props.data;
+    const[currentHero] = [props.currentHero]
   return (
       <div className="hero-stats">
-          <img src="https://gamepedia.cursecdn.com/dota2_gamepedia/2/26/Abaddon_icon.png" alt=""/>
+
+{Object.keys(props.data).map((item) => {
+    if(data[item].id===currentHero)
+    return(
         <div className="info-block">
-            <p className="hero-name">Abbadon</p>
-            <table>
+<p className="hero-name">{data[item].localized_name}</p>
+<img className="hero-img" src={"http://cdn.dota2.com" + data[item].img} alt=""/>
+<div className="attrs">
+                        <div><img src="./img/str.png" alt="str"/>{data[item].base_str}</div>
+                        <div><img src="./img/agi.png" alt="agi"/>{data[item].base_agi}</div>
+                        <div><img src="./img/int.png" alt="int"/>{data[item].base_int}</div>
+                    </div>
+<table>
                 <tbody>
+                    
+                    
+                    
                     <tr>
-                        <td>Hit points:</td>
-                        <td>600</td>
+                        <td className="table-title" >Hit points:</td>
+                        <td className="table-value">{data[item].base_health}</td>
                     </tr>
                     <tr>
-                        <td>Base health regen:</td>
-                        <td>2</td>
+                        <td className="table-title" >Base health regen:</td>
+                        <td className="table-value">{data[item].base_health_regen}</td>
                     </tr>
                     <tr>
-                        <td>Base mana regen:</td>
-                        <td>0.2</td>
+                        <td className="table-title" >Base mana regen:</td>
+                        <td className="table-value">{data[item].base_mana_regen}</td>
                     </tr>
                     <tr>
-                        <td>Base attack:</td>
-                        <td>50</td>
+                        <td className="table-title" >Base attack:</td>
+                        <td className="table-value">{data[item].base_attack_min}-{data[item].base_attack_max}</td>
                     </tr>
                     <tr>
-                        <td>Base str:</td>
-                        <td>20</td>
+                        <td className="table-title" >Base str:</td>
+                        <td className="table-value">{data[item].base_str}</td>
                     </tr>
                     <tr>
-                        <td>Base agi:</td>
-                        <td>10</td>
+                        <td className="table-title" >Base agi:</td>
+                        <td className="table-value">{data[item].base_agi}</td>
                     </tr>
                     <tr>
-                        <td>Base int:</td>
-                        <td>10</td>
+                        <td className="table-title" >Base int:</td>
+                        <td className="table-value">{data[item].base_int}</td>
                     </tr>
                     <tr>
-                        <td>Move speed</td>
-                        <td>330</td>
+                        <td className="table-title" >Move speed:</td>
+                        <td className="table-value">{data[item].move_speed}</td>
+                    </tr>
+                    <tr>
+                        <td className="table-title" >Attack type:</td>
+                        <td className="table-value">{data[item].attack_type}</td>
+                    </tr>
+                    <tr>
+                        <td className="table-title" >Roles</td>
+                        <td className="table-value">{data[item].roles[0]}, { data[item].roles[1]}, {data[item].roles[2]}</td>
                     </tr>
                 </tbody>
-            </table>
-        </div>
+                </table>
+          
         
+            
+        
+            
+        
+        </div>
+    )
+})}
 
-
+    <div>
+        
+    </div>
       </div>
+
+
+
   );
 }
 

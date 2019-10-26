@@ -2,17 +2,62 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 5%; }
-  .hero-stats img {
-    width: 40%;
-    margin-right: 10%; }
+  padding: 3% 42%; }
   .hero-stats .info-block {
-    width: 50%; }
-    .hero-stats .info-block .hero-name {
-      margin-top: 0; }
+    border: #666666 1px solid;
+    padding: 1.5%; }
+    .hero-stats .info-block .attrs {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      background: -webkit-gradient(linear, left bottom, left top, color-stop(-50%, #b9500b), color-stop(80%, #292821));
+      background: linear-gradient(0deg, #b9500b -50%, #292821 80%);
+      margin-bottom: 1.5%;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+      padding: 1.5% 0; }
+      .hero-stats .info-block .attrs div {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center; }
+        .hero-stats .info-block .attrs div img {
+          margin-bottom: 10%; }
     .hero-stats .info-block table {
+      width: 100%;
+      border-collapse: collapse; }
+      .hero-stats .info-block table tbody {
+        width: 100%; }
+        .hero-stats .info-block table tbody .img {
+          width: 100%; }
+        .hero-stats .info-block table tbody img {
+          width: 100%; }
+        .hero-stats .info-block table tbody td {
+          padding: 2% 10%;
+          width: 33%; }
+        .hero-stats .info-block table tbody tr:nth-child(2n) {
+          background: #1d1f20; }
+      .hero-stats .info-block table .table-value, .hero-stats .info-block table .table-title {
+        padding: 2% 4%; }
+      .hero-stats .info-block table .table-title {
+        width: 70%; }
+      .hero-stats .info-block table .table-value {
+        text-align: center;
+        width: 30%; }
+    .hero-stats .info-block .hero-name {
+      margin: 0;
+      text-align: center;
+      padding: 0.5% 0;
+      background: #b8500b;
+      margin-bottom: 1%;
+      font-weight: bold; }
+    .hero-stats .info-block .hero-img {
       width: 100%; }
-    .hero-stats .info-block td {
-      width: 50%; }
 
 /*# sourceMappingURL=HeroStats.css.map */
