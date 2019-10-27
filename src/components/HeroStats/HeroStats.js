@@ -11,7 +11,7 @@ function HeroStats(props) {
       <div className="hero-stats">
 
 {Object.keys(props.data).map((item) => {
-    if(data[item].id===currentHero)
+    if(data[item].localized_name===currentHero)
     return(
         <div className="info-block">
 <p className="hero-name">{data[item].localized_name}</p>

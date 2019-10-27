@@ -25,9 +25,9 @@ function HeroContainer(props) {
                         
                         return (
                             
-                            <div className="hero-block" onClick={(e) => props.setCurrentHero(props.data[item].id)}>
+                            <div className="hero-block" onMouseOver={(e) => props.setCurrentHero(props.data[item].localized_name)}>
                                                              
-                                <Link to="/hero-stats" >
+                                <Link to={"/"+props.currentHero} >
                                     <img style={coloured} src={"http://cdn.dota2.com" + props.data[item].img} alt={props.data[item].id} />
                                 </Link>
                             </div>

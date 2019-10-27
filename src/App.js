@@ -9,7 +9,7 @@ import './App.css';
 import MainWindow from "./components/MainWindow/MainWindow";
 import HeroStats from "./components/HeroStats/HeroStats"
 function App() {
-  const[currentHero, setCurrentHero] = useState(1);
+  const[currentHero, setCurrentHero] = useState("Axe");
   const [data, setData] = useState({});
   
     useEffect(() => {
@@ -35,7 +35,8 @@ function App() {
       </header>
 
         <Switch>
-          <Route path="/hero-stats">
+          {/* <Route path="/hero-stats"> */}
+          <Route path={"/"+currentHero}>
           <HeroStats data={data} currentHero={currentHero} setCurrentHero={setCurrentHero}/>
           
           </Route>
