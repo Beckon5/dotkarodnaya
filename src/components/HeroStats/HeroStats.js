@@ -6,7 +6,7 @@ import './HeroStats.css';
 
 function HeroStats(props) {
     const data = props.data;
-    const[currentHero] = [props.currentHero]
+    const currentHero = props.currentHero
   return (
       <div className="hero-stats">
 

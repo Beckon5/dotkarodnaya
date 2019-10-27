@@ -1,3 +1,6 @@
+.test {
+  color: black; }
+
 header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -7,7 +10,7 @@ header {
           justify-content: space-between; }
 
 .main-window {
-  padding: 2% 25%; }
+  padding: 2% 10%; }
   .main-window .title {
     margin: 20px 0 5px;
     font-size: 18px;
@@ -54,7 +57,7 @@ header {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap; }
     .main-window__hero-container .hero-block {
-      width: 9%;
+      width: 5.5%;
       position: relative;
       height: 2.5vw;
       margin: 3px; }
@@ -68,8 +71,6 @@ header {
         -webkit-transform: scale(1.7);
                 transform: scale(1.7);
         position: absolute;
-        z-index: 1;
-        -webkit-filter: grayscale(0%);
-                filter: grayscale(0%); }
+        z-index: 1; }
 
 /*# sourceMappingURL=MainWindow.css.map */

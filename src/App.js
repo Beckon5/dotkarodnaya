@@ -11,7 +11,7 @@ import HeroStats from "./components/HeroStats/HeroStats"
 function App() {
   const[currentHero, setCurrentHero] = useState(1);
   const [data, setData] = useState({});
-    
+  
     useEffect(() => {
         const fetchData = async () => {
             const result = await axios(
@@ -21,11 +21,15 @@ function App() {
         };
         fetchData();
     }, []);
+    
+    
   return (
     <Router>
       
       <div className="App">
         <header>
+          
+          
           Утренняя катка - лучше чем зарядка.
           <Link to="/">Main page</Link>
       </header>
