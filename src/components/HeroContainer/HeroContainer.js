@@ -1,4 +1,4 @@
-import React,{useEffect} from "react";
+import React from "react";
 import './HeroContainer.css';
 import {
 
@@ -25,7 +25,7 @@ function HeroContainer(props) {
                         
                         return (
                             
-                            <div className="hero-block" onMouseOver={(e) => props.setCurrentHero(props.data[item].localized_name)}>
+                            <div key={props.data[item].id} className="hero-block" onMouseOver={(e) => props.setCurrentHero(props.data[item].localized_name)}>
                                                              
                                 <Link to={"/"+props.currentHero} >
                                     <img style={coloured} src={"http://cdn.dota2.com" + props.data[item].img} alt={props.data[item].id} />

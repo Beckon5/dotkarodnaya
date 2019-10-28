@@ -1,7 +1,5 @@
 import React from 'react';
-import {
-    BrowserRouter as Link, Router
-  } from "react-router-dom";
+
 import './HeroStats.css';
 
 function HeroStats(props) {
