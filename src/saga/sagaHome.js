@@ -1,9 +1,7 @@
 import {
   call,
   put,
-  takeEvery,
-  select,
-  take
+  takeEvery
 } from "redux-saga/effects";
 import axios from "axios";
 import {
