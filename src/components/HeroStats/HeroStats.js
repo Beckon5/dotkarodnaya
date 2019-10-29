@@ -18,7 +18,7 @@ function HeroStats(props) {
             {Object.keys(props.data).map((item) => {
                 if (data[item].localized_name === currentHero)
                     return (
-                        <div className="info-block">
+                        <div key={data[item].id} className="info-block">
                             <p className="hero-name">{data[item].localized_name}</p>
                             <img className="hero-img" src={"http://cdn.dota2.com" + data[item].img} alt="" />
                             <div className="attrs">

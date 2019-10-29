@@ -9,7 +9,7 @@ import './App.css';
 import MainWindow from "./components/MainWindow/MainWindow";
 import HeroStats from "./components/HeroStats/HeroStats"
 import { connect} from 'react-redux'
-import {changeData} from './store/actions'
+import {changeData, getData} from './store/actions'
 import {bindActionCreators } from 'redux'
 
 const mapStateToProps = (state) => {
@@ -20,22 +20,23 @@ const mapStateToProps = (state) => {
 
 const putActionsToProps =(dispatch) =>{
   return{
-      changeData: bindActionCreators(changeData, dispatch)
+      changeData: bindActionCreators(changeData, dispatch),
+      getData: bindActionCreators(getData, dispatch)
   }
 };
 
 function App(props) {
-  const {currentHero, changeData} = props;
+  const {currentHero, getData} = props;
   
-
   useEffect(() => {
-    const fetchData = async () => {
-      const result = await axios(
-        'https://api.opendota.com/api/heroStats',
-      );
-      changeData(result.data);
-    };
-    fetchData();
+    getData();
+    // const fetchData = async () => {
+    //   const result = await axios(
+    //     'https://api.opendota.com/api/heroStats',
+    //   );
+    //   changeData(result.data);
+    // };
+    // fetchData();
   }, []);
 
 
