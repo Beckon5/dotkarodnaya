@@ -13,7 +13,7 @@ import {
 import {
   path
 } from "./axiosConfig";
-import {ACTION_GET_DATA} from "../store/actionType";
+import actionType from "../store/actionType";
 
 export function* fetchData(action) {
 
@@ -31,5 +31,5 @@ export function* fetchData(action) {
 
 
 export function* sagaHome() {
-  yield takeEvery(ACTION_GET_DATA, fetchData);
+  yield takeEvery(actionType.ACTION_GET_DATA, fetchData);
 }

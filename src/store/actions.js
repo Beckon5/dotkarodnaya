@@ -1,5 +1,11 @@
-import {ACTION_GET_DATA, ACTION_CHANGE_CURRENT_HERO, ACTION_CHANGE_SEARCH_VALUE, ACTION_CHANGE_DATA} from './actionType'
-
+// import {ACTION_GET_DATA, ACTION_CHANGE_CURRENT_HERO, ACTION_CHANGE_SEARCH_VALUE, ACTION_CHANGE_DATA} from './actionType'
+import actionType from "./actionType";
+const {
+    ACTION_CHANGE_CURRENT_HERO,
+    ACTION_CHANGE_SEARCH_VALUE,
+    ACTION_CHANGE_DATA,
+    ACTION_GET_DATA
+  } = actionType;
 export const changeCurrentHero = (newCurrentHero) => {
 
     return {
