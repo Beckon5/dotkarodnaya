@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import {
   BrowserRouter as Router,
@@ -8,40 +8,55 @@ import {
 import './App.css';
 import MainWindow from "./components/MainWindow/MainWindow";
 import HeroStats from "./components/HeroStats/HeroStats"
-function App() {
-  const[currentHero, setCurrentHero] = useState("Axe");
-  const [data, setData] = useState({});
+import { connect} from 'react-redux'
+import {changeData} from './store/actions'
+import {bindActionCreators } from 'redux'
+
+const mapStateToProps = (state) => {
+  return {
+      currentHero: state.currentHero
+  }
+}
+
+const putActionsToProps =(dispatch) =>{
+  return{
+      changeData: bindActionCreators(changeData, dispatch)
+  }
+};
+
+function App(props) {
+  const {currentHero, changeData} = props;
   
-    useEffect(() => {
-        const fetchData = async () => {
-            const result = await axios(
-                'https://api.opendota.com/api/heroStats',
-            );
-            setData(result.data);
-        };
-        fetchData();
-    }, []);
-    
-    
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await axios(
+        'https://api.opendota.com/api/heroStats',
+      );
+      changeData(result.data);
+    };
+    fetchData();
+  }, []);
+
+
   return (
     <Router>
-      
+
       <div className="App">
         <header>
-          
-          
+
           Утренняя катка - лучше чем зарядка.
           <Link to="/">Main page</Link>
-      </header>
+        </header>
 
         <Switch>
           {/* <Route path="/hero-stats"> */}
-          <Route path={"/"+currentHero}>
-          <HeroStats data={data} currentHero={currentHero} setCurrentHero={setCurrentHero}/>
-          
+          <Route path={"/" + currentHero}>
+            <HeroStats />
+
           </Route>
           <Route path="/">
-            <MainWindow data={data} currentHero={currentHero} setCurrentHero={setCurrentHero}/>
+            <MainWindow />
           </Route>
         </Switch>
 
@@ -51,4 +66,4 @@ function App() {
   );
 }
 
-export default App;
+export default connect(mapStateToProps, putActionsToProps)(App);

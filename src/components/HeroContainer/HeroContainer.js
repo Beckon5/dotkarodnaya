@@ -1,22 +1,38 @@
 import React from "react";
 import './HeroContainer.css';
+import {changeCurrentHero} from '../../store/actions'
 import {
-
     Link
 } from "react-router-dom";
-function HeroContainer(props) {
+import { connect} from 'react-redux'
+import {bindActionCreators } from 'redux'
+
+const mapStateToProps = (state) => {
     
+    return {
+        data: state.data,
+        searchValue: state.searchValue,
+        currentHero: state.currentHero
+    }
+}
+const putActionsToProps =(dispatch) =>{
+    return{
+        changeCurrentHero: bindActionCreators(changeCurrentHero, dispatch)
+    }
+};
+function HeroContainer(props) {
+    const {data, searchValue, changeCurrentHero, currentHero} = props;
 
     
     return (
         <div className="main-window__hero-container">
             {
-                Object.keys(props.data).map((item) => {
+                Object.keys(data).map((item) => {
                     const coloured = {
                         filter: "grayscale(100%)",
                         opacity: "0.4"
                     }
-                    if(props.data[item].localized_name.toLowerCase().match(props.currentSearchValue.toLowerCase())){
+                    if(data[item].localized_name.toLowerCase().match(searchValue.toLowerCase())){
                        coloured.filter="grayscale(0%)"
                        coloured.opacity="1"
                     
@@ -25,9 +41,9 @@ function HeroContainer(props) {
                         
                         return (
                             
-                            <div key={props.data[item].id} className="hero-block" onMouseOver={(e) => props.setCurrentHero(props.data[item].localized_name)}>
+                            <div key={props.data[item].id} className="hero-block" onMouseOver={(event) => {changeCurrentHero(data[item].localized_name)}}>
                                                              
-                                <Link to={"/"+props.currentHero} >
+                                <Link to={"/"+currentHero} >
                                     <img style={coloured} src={"http://cdn.dota2.com" + props.data[item].img} alt={props.data[item].id} />
                                 </Link>
                             </div>
@@ -42,7 +58,7 @@ function HeroContainer(props) {
 
 }
 
-export default HeroContainer;
+export default connect(mapStateToProps, putActionsToProps)(HeroContainer);
 
 
 
