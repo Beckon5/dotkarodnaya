@@ -16,14 +16,13 @@ import actionType from "../store/actionType";
 export function* fetchData(action) {
 
   try {
-
     const response = yield call(
       [axios, axios.get],
       `${path}`
     );
     yield put(changeData(response.data));
   } catch (e) {
-    console.log('THAT WAS AN ERROR')
+    alert("Ошибка получения данных с API")
   }
 }
 
