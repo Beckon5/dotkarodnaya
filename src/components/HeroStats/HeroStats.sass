@@ -5,6 +5,7 @@
     .info-block
         border: rgb(102,102,102) 1px solid
         padding: 1.5%
+        width: 100%
         .attrs
             display: flex
             background: linear-gradient(0deg, rgb(185, 80, 11) -50%, rgb(41, 40, 33) 80%)
@@ -17,32 +18,22 @@
                 align-items: center
                 img
                     margin-bottom: 10%
-                    
-                
-        table
+        .stats-table
             width: 100%
-            border-collapse: collapse
-            tbody
+            .tr
+                
                 width: 100%
-                
-                .img
-                    width: 100%
-                img
-                    width: 100%
-            
-                td
-                    padding: 2% 10%
-                    width: 33%
-                
-                tr:nth-child(2n)
-                    background: rgb(29, 31, 32)
-            .table-value, .table-title
-                padding: 2% 4%
-            .table-title
-                width: 70%
-            .table-value
-                text-align: center
-                width: 30%
+                display: flex
+                justify-content: space-between
+                align-items: center
+                .table-title
+                    width: 60%
+                    text-align: left
+                .table-value
+                    width: 40%
+                    text-align: center
+            .tr:nth-child(2n)
+                background: rgb(29, 31, 32)
         .hero-name
             margin: 0
             text-align: center

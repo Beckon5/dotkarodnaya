@@ -5,7 +5,8 @@
   padding: 3% 42%; }
   .hero-stats .info-block {
     border: #666666 1px solid;
-    padding: 1.5%; }
+    padding: 1.5%;
+    width: 100%; }
     .hero-stats .info-block .attrs {
       display: -webkit-box;
       display: -ms-flexbox;
@@ -29,27 +30,27 @@
                 align-items: center; }
         .hero-stats .info-block .attrs div img {
           margin-bottom: 10%; }
-    .hero-stats .info-block table {
-      width: 100%;
-      border-collapse: collapse; }
-      .hero-stats .info-block table tbody {
-        width: 100%; }
-        .hero-stats .info-block table tbody .img {
-          width: 100%; }
-        .hero-stats .info-block table tbody img {
-          width: 100%; }
-        .hero-stats .info-block table tbody td {
-          padding: 2% 10%;
-          width: 33%; }
-        .hero-stats .info-block table tbody tr:nth-child(2n) {
-          background: #1d1f20; }
-      .hero-stats .info-block table .table-value, .hero-stats .info-block table .table-title {
-        padding: 2% 4%; }
-      .hero-stats .info-block table .table-title {
-        width: 70%; }
-      .hero-stats .info-block table .table-value {
-        text-align: center;
-        width: 30%; }
+    .hero-stats .info-block .stats-table {
+      width: 100%; }
+      .hero-stats .info-block .stats-table .tr {
+        width: 100%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center; }
+        .hero-stats .info-block .stats-table .tr .table-title {
+          width: 60%;
+          text-align: left; }
+        .hero-stats .info-block .stats-table .tr .table-value {
+          width: 40%;
+          text-align: center; }
+      .hero-stats .info-block .stats-table .tr:nth-child(2n) {
+        background: #1d1f20; }
     .hero-stats .info-block .hero-name {
       margin: 0;
       text-align: center;

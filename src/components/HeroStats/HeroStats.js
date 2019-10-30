@@ -10,7 +10,7 @@ const mapStateToProps = (state) => {
         data: state.data
     }
 }
-function HeroStats(props) {
+const HeroStats =(props)=> {
     const {data, currentHero} = props;
     return (
         <div className="hero-stats">
@@ -26,53 +26,51 @@ function HeroStats(props) {
                                 <div><img src="./img/agi.png" alt="agi" />{data[item].base_agi}</div>
                                 <div><img src="./img/int.png" alt="int" />{data[item].base_int}</div>
                             </div>
-                            <table>
-                                <tbody>
+                            
 
 
-
-                                    <tr>
-                                        <td className="table-title" >Hit points:</td>
-                                        <td className="table-value">{data[item].base_health}</td>
-                                    </tr>
-                                    <tr>
-                                        <td className="table-title" >Base health regen:</td>
-                                        <td className="table-value">{data[item].base_health_regen}</td>
-                                    </tr>
-                                    <tr>
-                                        <td className="table-title" >Base mana regen:</td>
-                                        <td className="table-value">{data[item].base_mana_regen}</td>
-                                    </tr>
-                                    <tr>
-                                        <td className="table-title" >Base attack:</td>
-                                        <td className="table-value">{data[item].base_attack_min}-{data[item].base_attack_max}</td>
-                                    </tr>
-                                    <tr>
-                                        <td className="table-title" >Base str:</td>
-                                        <td className="table-value">{data[item].base_str}</td>
-                                    </tr>
-                                    <tr>
-                                        <td className="table-title" >Base agi:</td>
-                                        <td className="table-value">{data[item].base_agi}</td>
-                                    </tr>
-                                    <tr>
-                                        <td className="table-title" >Base int:</td>
-                                        <td className="table-value">{data[item].base_int}</td>
-                                    </tr>
-                                    <tr>
-                                        <td className="table-title" >Move speed:</td>
-                                        <td className="table-value">{data[item].move_speed}</td>
-                                    </tr>
-                                    <tr>
-                                        <td className="table-title" >Attack type:</td>
-                                        <td className="table-value">{data[item].attack_type}</td>
-                                    </tr>
-                                    <tr>
-                                        <td className="table-title" >Roles</td>
-                                        <td className="table-value">{data[item].roles[0]}, {data[item].roles[1]}, {data[item].roles[2]}</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                                <div className="stats-table">
+                                    <div className="tr">
+                                        <div className="table-title" >Hit points:</div>
+                                        <div className="table-value">{data[item].base_health}</div>
+                                    </div>
+                                    <div className="tr">
+                                        <div className="table-title" >Base health regen:</div>
+                                        <div className="table-value">{data[item].base_health_regen}</div>
+                                    </div>
+                                    <div className="tr">
+                                        <div className="table-title" >Base mana regen:</div>
+                                        <div className="table-value">{data[item].base_mana_regen}</div>
+                                    </div>
+                                    <div className="tr">
+                                        <div className="table-title" >Base attack:</div>
+                                        <div className="table-value">{data[item].base_attack_min}-{data[item].base_attack_max}</div>
+                                    </div>
+                                    <div className="tr">
+                                        <div className="table-title" >Base str:</div>
+                                        <div className="table-value">{data[item].base_str}</div>
+                                    </div>
+                                    <div className="tr">
+                                        <div className="table-title" >Base agi:</div>
+                                        <div className="table-value">{data[item].base_agi}</div>
+                                    </div>
+                                    <div className="tr">
+                                        <div className="table-title" >Base int:</div>
+                                        <div className="table-value">{data[item].base_int}</div>
+                                    </div>
+                                    <div className="tr">
+                                        <div className="table-title" >Move speed:</div>
+                                        <div className="table-value">{data[item].move_speed}</div>
+                                    </div>
+                                    <div className="tr">
+                                        <div className="table-title" >Attack type:</div>
+                                        <div className="table-value">{data[item].attack_type}</div>
+                                    </div>
+                                    <div className="tr">
+                                        <div className="table-title" >Roles</div>
+                                        <div className="table-value">{data[item].roles[0]}, {data[item].roles[1]}, {data[item].roles[2]}</div>
+                                    </div>
+                                    </div>
 
 
 

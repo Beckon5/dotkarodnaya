@@ -20,7 +20,7 @@ const putActionsToProps =(dispatch) =>{
         changeCurrentHero: bindActionCreators(changeCurrentHero, dispatch)
     }
 };
-function HeroContainer(props) {
+const HeroContainer=(props)=> {
     const {data, searchValue, changeCurrentHero, currentHero} = props;
 
     
